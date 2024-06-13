@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sidebar/sidebar";
+import Sidebar from "../sidebar/sidebar";
 
 export default function userLayout({ children }) {
   return (
