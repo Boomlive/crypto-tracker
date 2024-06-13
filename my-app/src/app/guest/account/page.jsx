@@ -1,5 +1,5 @@
 import React from "react";
-import UserLayout from "@/components/userlayout/userLayout";
+import UserLayout from "../../../components/userlayout/userlayout";
 
 function page() {
   return (
