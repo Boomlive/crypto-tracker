@@ -14,4 +14,8 @@ router.post("/pcrypto", auth, postcrypto);
 router.put("/pcrypto", auth, updatecrypto);
 router.delete("/pcrypto", auth, delcrypto);
 
+router.get("/hello", (req, res) => {
+  res.send("hello");
+});
+
 module.exports = router;
