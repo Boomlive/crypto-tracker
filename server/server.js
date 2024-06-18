@@ -8,7 +8,7 @@ const client = require("./Config/db");
 
 client.connect((err) => {
   if (err) {
-    console.error("Error connecting to DB");
+    console.error(`Error connecting to DB ${err}`);
     return;
   }
   console.log("Connected to DB");
