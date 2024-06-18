@@ -14,9 +14,9 @@ client.connect((err) => {
   console.log("Connected to DB");
 });
 
-app.use(morgan("dev")); // ไว้show หน้า cmd
-app.use(cors()); //ไว้กันติด
-app.use(bodyParse.json({ limit: "10mb" })); //กำหนดขนาด
+app.use(morgan("dev"));
+app.use(cors());
+app.use(bodyParse.json({ limit: "10mb" }));
 
 readdirSync("./Routes").map((r) => app.use("/api", require("./Routes/" + r)));
 
