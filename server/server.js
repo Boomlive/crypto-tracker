@@ -4,15 +4,6 @@ const morgan = require("morgan");
 const cors = require("cors");
 const bodyParse = require("body-parser");
 const app = express();
-const client = require("./Config/db");
-
-client.connect((err) => {
-  if (err) {
-    console.error(`Error connecting to DB ${err}`);
-    return;
-  }
-  console.log("Connected to DB");
-});
 
 app.use(morgan("dev"));
 app.use(cors());

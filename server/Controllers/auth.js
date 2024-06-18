@@ -5,6 +5,13 @@ require("dotenv").config();
 
 exports.register = async (req, res) => {
   try {
+    client.connect((err) => {
+      if (err) {
+        console.error(`Error connecting to DB ${err}`);
+        return;
+      }
+      console.log("Connected to DB");
+    });
     //checkuser
     const { email, password } = req.body;
     const user = await client.query("SELECT * FROM person WHERE email = $1", [
@@ -29,6 +36,10 @@ exports.register = async (req, res) => {
         msg: "server error",
       })
       .status(500);
+  } finally {
+    if (client) {
+      client.release(); // Release the client back to the pool
+    }
   }
 };
 
